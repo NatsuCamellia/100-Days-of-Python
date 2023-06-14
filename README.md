@@ -75,3 +75,86 @@
   if __name__ == '__main__':
 	  print('Hello, world!')
 	```
+
+## Day 3
+
+### 閱讀文章
+- [07.字符串和常用数据结构.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/07.字符串和常用数据结构.md)
+- [08.面向对象编程基础.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/08.面向对象编程基础.md)
+- [09.面向对象进阶.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/09.面向对象进阶.md)
+- [[Python物件導向]淺談Python類別(Class)](https://www.learncodewithmike.com/2020/01/python-class.html)
+- [Python OOP物件導向設計的類型方法(Instance, Class, Static Method) | by Sean Yeh | Python Everywhere -from Beginner to Advanced | Medium](https://medium.com/seaniap/python-oop物件導向設計的類型方法-instance-class-static-method-1ff71f50942d)
+
+### 小練習
+- 電子時鐘
+
+---
+
+- 容器
+  ```Python
+  list1 = [1, 2, 3]
+  tuple1 = (1, 2, 3) // Immutable
+  set1 = {1, 2, 3} // No repeat
+  dict1 = {1: 'A', 2: 'B', 3: 'C'}
+	```
+- 物件：使用大駝峰命名
+  ```Python
+  class Student(object):
+
+	__slots__ = ('_name', '_age', '__uid') // Restrict field
+
+    def __init__(self, name, age, uid):
+        self._name = name
+        self._age = age
+        self.__uid = uid // Private field
+
+	@property // Getter
+    def name(self):
+        return self._name
+        
+    @property // Getter
+    def age(self):
+        return self._age
+    
+    @age.setter // Setter
+    def age(self, age):
+        self._age = age
+
+    def study(self, course_name):
+        print('%s is learing %s.' % (self._name, course_name))
+	```
+- 靜態方法
+	```Python
+  class Triangle(object):
+
+    def __init__(self, a, b, c):
+        self._a = a
+        self._b = b
+        self._c = c
+
+    @staticmethod
+    def is_valid(a, b, c):
+        return a + b > c and b + c > a and a + c > b
+
+  def main():
+	print(Triangle.is_valid(3, 4, 5))
+	```
+- 類別方法
+  ```Python
+  from time import time, localtime
+  
+  class Clock(object):
+
+    def __init__(self, hour=0, minute=0, second=0):
+        self._hour = hour
+        self._minute = minute
+        self._second = second
+
+    @classmethod
+    def now(cls): // Use cls conventionally
+        ctime = localtime(time())
+        return cls(ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
+
+  def main():
+	clock = Clock.now()
+	```
