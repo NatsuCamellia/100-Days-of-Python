@@ -158,3 +158,81 @@
   def main():
 	clock = Clock.now()
 	```
+
+## Day 4
+
+### 閱讀文章
+- [11.文件和异常.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/11.文件和异常.md)
+- [【Day 3】常見的資料格式 (2/3) - JSON - iT 邦幫忙](https://ithelp.ithome.com.tw/articles/10216970)
+
+---
+
+- 開啟檔案
+  ```Python
+  def main():
+    with open('lorem.txt', 'r', encoding='utf-8') as file:
+        for line in file:
+            print(line)
+            
+    with open('lorem.txt', 'r', encoding='utf-8') as file:
+        print(file.read())
+
+  if __name__ == '__main__':
+    main()
+	```
+- Exception
+  ```Python
+  def main():
+    f = None
+    try:
+        f = open('lorem.txt', 'r', encoding='utf-8')
+        print(f.read())
+    except FileNotFoundError:
+        print('File not found.')
+    except LookupError:
+        print('Unknown encoding.')
+    except UnicodeDecodeError:
+        print('Decode error.')
+    finally:
+        if f:
+            f.close()
+	```
+- JSON 與 Python 對應
+	- JSON, Python
+	- Object, Dict
+	- Array, List
+	- String, str
+	- Number, int...
+	- true, True
+	- null, None
+- 讀寫 JSON
+  ```Python
+  import json
+
+  def main():
+      mydict = {
+          'name': 'Eve',
+          'age': 19,
+          'friends': ['Alice', 'Bob'],
+          'score': [
+              {'subject': 'English', 'point': 80},
+              {'subject': 'Chinese', 'point': 90},
+              {'subject': 'Science', 'point': 85}
+          ]
+      }
+      try:
+          with open('data.json', 'w', encoding='utf-8') as file:
+              json.dump(mydict, file)
+      except IOError as e:
+          print(e)
+      print('Done')
+
+
+  if __name__ == '__main__':
+      main()
+	```
+- 其他 JSON 方法
+	- `json.dump()`：物件寫入檔案
+	- `json.load()`：檔案讀出物件
+	- `json.dumps()`：物件變成字串
+	- `json.loads()`：字串變成物件
