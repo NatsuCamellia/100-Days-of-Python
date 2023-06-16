@@ -236,3 +236,15 @@
 	- `json.load()`：檔案讀出物件
 	- `json.dumps()`：物件變成字串
 	- `json.loads()`：字串變成物件
+
+## Day 5
+
+### 閱讀文章
+- [12.字符串和正则表达式.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/12.字符串和正则表达式.md)
+- [13.进程和线程.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/13.进程和线程.md)
+
+---
+
+- 正則表達式
+- Multiprocessing
+- Multithreading
