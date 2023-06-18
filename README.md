@@ -248,3 +248,28 @@
 - 正則表達式
 - Multiprocessing
 - Multithreading
+
+## Day 6
+
+### 閱讀文章
+- [14.网络编程入门和网络应用开发.md](https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/14.网络编程入门和网络应用开发.md)
+
+### 小練習
+- [Kattis - R2](https://open.kattis.com/problems/r2)
+---
+
+- 思考學 Python 的必要性
+- 明天換 Java
+
+## Day 7
+
+### 閱讀文章
+- [Gradle](https://gradle.org/)
+- [Gradle Tutorial](https://youtu.be/kONQCIAcWeI)
+- [Working with Gradle](https://youtu.be/6V6G3RyxEMk)
+
+---
+
+- Gradle 是什麼
+- Gradle 的優缺點比較
+- Gradle 與 Maven
